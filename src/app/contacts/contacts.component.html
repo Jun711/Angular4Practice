@@ -1,0 +1,21 @@
+<div class="container">
+  <div id="content">
+    <div class="contactList">
+      <div *ngFor="let emailItem of emails; let emailId = index">
+        <input id="checkBox" type="checkbox">
+        <span>{{emailItem.email}}</span>
+        <a (click)="onEditEmail(emailItem, emailId)">Edit</a>
+      </div>
+    </div>
+    <div class="contactList">
+      <div *ngFor="let phoneItem of phones; let phoneId = index">
+        <input id="checkBox" type="checkbox">
+        <span>{{phoneItem.number}}</span>
+        <a (click)="onEditPhone(phoneItem, phoneId)">Edit</a>
+      </div>
+    </div>
+  </div>
+  <button class="contactButton">
+    <a routerLink="/contact-detail">Add new contact</a>
+  </button>
+</div>

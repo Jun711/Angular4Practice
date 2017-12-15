@@ -1,0 +1,69 @@
+<div class="container">
+  <div>
+    <input type="radio"
+           id="emailButton"
+           name="formDisplay"
+           value="email"
+           [checked]="display==='email'"
+           (change)="onDisplayChange('email')">
+    <label for="emailButton">Email</label>
+    <input type="radio"
+           id="phoneButton"
+           name="formDisplay"
+           value="phone"
+           [checked]="display==='phone'"
+           (change)="onDisplayChange('phone')">
+    <label for="phoneButton">Phone</label>
+  </div>
+  <form *ngIf="display==='email'" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <div class="form">
+      <label for="email">Email: </label>
+      <input
+        #emailInput
+        type="email"
+        [(ngModel)]="editEmail"
+        placeholder="Email Address"
+        id="email"
+        name="email"
+        minlength="3"
+        maxlength="256"
+        pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        required>
+    </div>
+    <button type="button" (click)="goBack()">Cancel</button>
+    <button type="submit" [disabled]="!contactForm.form.valid">Add</button>
+  </form>
+  <form *ngIf="display==='phone'" (ngSubmit)="onSubmit()" #phoneForm="ngForm">
+    <div class="form">
+      <div>
+        <label for="number">Phone:</label>
+        <input type="tel"
+               [(ngModel)]="editNumber"
+               placeholder="Number"
+               id="number"
+               name="number"
+               minlength="6"
+               maxlength="20"
+               pattern="^[\d][\d -]+[\d]$"
+               required>
+      </div>
+      <div>
+        <label for="carrier">Carrier: </label>
+        <input type="text"
+               [(ngModel)]="editCarrier"
+               placeholder="Carrier"
+               id="carrier"
+               name="carrier"
+               minlength="2"
+               maxlength="20"
+               required>
+      </div>
+    </div>
+    <button type="button" (click)="goBack()">Cancel</button>
+    <button type="submit" [disabled]="!phoneForm.form.valid">Add</button>
+  </form>
+  <br>
+  <div class="error">
+    {{errorMessage}}
+  </div>
+</div>

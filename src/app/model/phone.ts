@@ -1,4 +1,4 @@
-export class Phones {
+export class Phone {
   number: string;
   carrier: string;
 }

@@ -1,0 +1,39 @@
+.contactButton {
+  height: 3em;
+  font-size: 0.875;
+  border-radius: 10%;
+  margin: 2em;
+  cursor: pointer;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: #888;
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
+}
+
+.contactList {
+  flex: 1;
+  margin: 3%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+div span {
+  display: inline-block;
+  margin-right: 1em;
+  width: 9em;
+  text-align: left;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+}

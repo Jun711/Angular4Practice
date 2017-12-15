@@ -1,0 +1,42 @@
+button {
+  height: 3em;
+  font-size: 0.875;
+  border-radius: 10%;
+  margin: 2em;
+  cursor: pointer;
+  outline: none;
+  width: 5em;
+}
+
+button:disabled {
+  opacity: 0.6;
+}
+
+.form {
+  width: 20em;
+  height: 5em;
+  margin: 0 auto;
+}
+
+label {
+  display: inline-block;
+  width: 5em;
+}
+
+input {
+  margin: 0.5em;
+  outline: none;
+  padding: 0.5em;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.error {
+  color: red;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+}
